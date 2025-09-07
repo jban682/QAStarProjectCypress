@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^15.1.0"
+    "cypress": "^15.1.0",
+    "mochawesome": "^7.1.3"
   },
   "dependencies": {
     "cypress-plugin-steps": "^1.2.1",
