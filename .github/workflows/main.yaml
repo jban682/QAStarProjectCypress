@@ -1,0 +1,28 @@
+name: Guess Test App 
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies and Run Regression Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headed: false
+          command: npm t
+
+      - name: Publish Test Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cypress HTML Reports
+          path: cypress/reports/
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
