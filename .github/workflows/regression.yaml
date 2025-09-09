@@ -1,4 +1,4 @@
-name: Guess Test App 
+name: Regression Testing
 on:
   push:
     branches: [main]
