@@ -1,4 +1,4 @@
-name: Guess Test App 
+name: Over All Testing
 on:
   push:
     branches: [main]
@@ -8,6 +8,10 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+
+    env: 
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ vars.PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
