@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import orderPageObject from "../e2e/pages/login.page";
+
+
+Cypress.Commands.add('login', (username, password) => {
+const getLogin = new orderPageObject().getLoginPageLocators
+
+  getLogin.getUserNameField()
+  .type(username);
+
+  getLogin.getPasswordField()
+  .type(password);
+
+  getLogin.getLoginButton()
+  .click();
+})
