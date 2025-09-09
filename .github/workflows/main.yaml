@@ -9,8 +9,8 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     env: 
-      USERNAME: Tester
-      PASSWORD: test
+      USERNAME: "Tester"
+      PASSWORD: "test"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
