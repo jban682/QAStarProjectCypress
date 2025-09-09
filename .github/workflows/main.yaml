@@ -8,7 +8,6 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
     env: 
       USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ vars.PASSWORD }}
