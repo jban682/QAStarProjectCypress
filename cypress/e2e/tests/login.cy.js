@@ -108,7 +108,7 @@ describe ('loginPageTesting', () => {
         .should('to.be.focused')
     }),
 
-   /* it('[TC006] Verify to login using valid credentials', () => {
+   it('[TC006] Verify to login using valid credentials', () => {
         cy.section('login using valid credentials')
         cy.step('1. Input correct username in username field')
         cy.step('2. Input correct password in password field')
@@ -120,6 +120,6 @@ describe ('loginPageTesting', () => {
         cy.get('tr > td > h1')
         .should('be.visible')
         .and('contain', 'Web Orders');
-    })  */
+    }) 
 
 })
