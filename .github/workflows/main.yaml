@@ -4,21 +4,21 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ vars.PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install Dependencies and Run Regression Tests
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
           headed: false
           command: npm t
-
       - name: Publish Test Reports
         if: always()
         uses: actions/upload-artifact@v4
