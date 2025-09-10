@@ -9,8 +9,9 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     env: 
-      USERNAME: "Tester"
-      PASSWORD: "test"
+      BASE_URL: ${{ vars.BASE_URL }}
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ vars.PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
