@@ -1,0 +1,68 @@
+{
+    "product1": {
+        "productName": "MyMoney",
+        "price": "100",
+        "discount": "0"
+    },
+    "product2": {
+        "productName": "FamilyAlbum",
+        "price": "80",
+        "discount": "0"
+    },
+    "product3": {
+        "productName": "ScreenSaver",
+        "price": "20",
+        "discount": "0"
+    },
+    "validQuantity": {
+        "quantity1": "1",
+        "quantity2": "5",
+        "quantity3": "100"
+    },
+    "invalidQnt": {
+        "qnt1": "a",
+        "qnt2": "-1",
+        "qnt3": "@"
+    },
+    "validInputData": {
+        "customerName": "Jean Grey",
+        "street": "E Pike Street",
+        "city": "New York",
+        "state": "New York",
+        "state1": "US",
+        "zip": "10152",
+        "card": "visa",
+        "cardNr": "1209883746764632",
+        "expireDate": "12/34"
+    },
+    "specialCharInput": {
+        "customerName": "@#$%^&",
+        "street": "@#$%^&",
+        "city": "@#$%^&",
+        "state": "@#$%^&",
+        "zip": "@#$%^&",
+        "card": "@#$%^&",
+        "cardNr": "@#$%^&",
+        "expireDate": "@#$%^"
+    },
+    "numberInput": {
+        "customerName": "2123345465",
+        "street": "2123345465",
+        "city": "2123345465",
+        "state": "2123345465",
+        "zip": "2123345465",
+        "card": "2123345465",
+        "cardNr": "2123345465",
+        "expireDate": "21233"
+    },
+    "limit256CharInput": {
+        "customerName": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "street": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "city": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "state": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "zip": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "card": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "cardNr": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,1",
+        "expireDate": "Lorem"
+    }
+}

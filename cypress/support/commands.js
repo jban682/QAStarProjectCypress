@@ -32,3 +32,11 @@ const getLogin = new orderPageObject().getLoginPageLocators
   getLogin.getPasswordField().type(password);
   getLogin.getLoginButton().click();
 })
+
+Cypress.Commands.add('verifyErrorMessage', (id, expectedText) => {
+  cy.get(`${id}`)
+    .invoke('text')
+    .then((text) => {
+      expect(text.trim()).to.equal(expectedText);
+    });
+});

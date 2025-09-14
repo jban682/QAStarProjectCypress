@@ -3,8 +3,9 @@ const { defineConfig } = require("cypress");
 require('dotenv').config()
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  
   env: {
-    // SITE_BASE_URL: 'http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx',
     BASE_URL: process.env.BASE_URL,
     USERNAME: process.env.USER,
     PASSWORD: process.env.PASSWORD,
@@ -12,7 +13,7 @@ module.exports = defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
   },
 });

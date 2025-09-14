@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-10T16:10:02.350Z",
+    "end": "2025-09-10T16:10:14.039Z",
+    "duration": 11689,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1b500104-2682-4fc8-b8ab-1e67223d43a1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\login.cy.js",
+      "file": "cypress\\e2e\\tests\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+          "title": "loginPageTesting",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[TC001] Validate unable to login with empty fields",
+              "fullTitle": "loginPageTesting [TC001] Validate unable to login with empty fields",
+              "timedOut": null,
+              "duration": 1775,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('unable to login with empty fields');\ncy.step('1. Verify that username field is empty');\ngetLogin.getUserNameLabel().should('be.visible').should('have.text', 'Username:');\ngetLogin.getUserNameField().should('be.visible').should('be.enabled');\ncy.step('2. Verify that password field is empty');\ngetLogin.getPasswordLabel().should('be.visible').should('have.text', 'Password:');\ngetLogin.getPasswordField().should('be.visible').and('be.enabled');\ncy.step('3. Click Login button');\ngetLogin.getLoginButton().should('be.visible').should('be.enabled').and('have.attr', 'value', 'Login').click();\ncy.step('Expect \"Invalid Login or Password\" error message');\ngetLogin.getErrorMessage().should('have.text', 'Invalid Login or Password.');",
+              "err": {},
+              "uuid": "905d3432-72b4-4238-9a96-7e98150f5c7c",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[TC002] Validate unable to login via invalid username",
+              "fullTitle": "loginPageTesting [TC002] Validate unable to login via invalid username",
+              "timedOut": null,
+              "duration": 1157,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('unable to login via invalid username');\ncy.step('1. Input invalid username and valid password');\ncy.login(_login2.default.TC002.username, _login2.default.TC002.password);\n//* Verify that password field will be empty\ngetLogin.getPasswordField().should('be.empty');\n//* Expect \"Invalid Login or Password\" error message \ngetLogin.getErrorMessage().should('have.text', 'Invalid Login or Password.');\n//* Verify that username field is focus\ngetLogin.getUserNameField().should('to.be.focused');",
+              "err": {},
+              "uuid": "87001eab-f259-41c0-9d18-7d1bad1ffa6a",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[TC003] Validate unable to login via incorrect credentials",
+              "fullTitle": "loginPageTesting [TC003] Validate unable to login via incorrect credentials",
+              "timedOut": null,
+              "duration": 1106,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('unable to login via incorrect credentials');\ncy.step('1. Input incorrect username password)');\ncy.login(_login2.default.TC003.username, _login2.default.TC003.password);\n//* Verify that password field will be empty\ngetLogin.getPasswordField().should('be.empty');\n//* Expect \"Invalid Login or Password\" error message \ngetLogin.getErrorMessage().should('have.text', 'Invalid Login or Password.');\n//* Verify that username field is focus\ngetLogin.getUserNameField().should('to.be.focused');",
+              "err": {},
+              "uuid": "d6eb3a71-0e09-4fde-b669-02721ce6f6e4",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[TC004] Validate unable to login via incorrect username",
+              "fullTitle": "loginPageTesting [TC004] Validate unable to login via incorrect username",
+              "timedOut": null,
+              "duration": 985,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('unable to login via incorrect username');\ncy.step('1. Input incorrect username and correct password');\ncy.login(_login2.default.TC004.username, _login2.default.TC004.password);\n//* Verify that password field will be empty\ngetLogin.getPasswordField().should('be.empty');\n//* Expect \"Invalid Login or Password\" error message \ngetLogin.getErrorMessage().should('have.text', 'Invalid Login or Password.');\n//* Verify that username field is focus\ngetLogin.getUserNameField().should('to.be.focused');",
+              "err": {},
+              "uuid": "79c5f247-79df-4c84-a706-cb9d48e97637",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[TC005] Validate unable to login via incorrect password",
+              "fullTitle": "loginPageTesting [TC005] Validate unable to login via incorrect password",
+              "timedOut": null,
+              "duration": 1040,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('unable to login via incorrect password');\ncy.step('1. Input correct username and incorrect password');\ncy.login(_login2.default.TC005.username, _login2.default.TC005.password);\n//* Verify that password field will be empty\ngetLogin.getPasswordField().should('be.empty');\n//* Expect \"Invalid Login or Password\" error message \ngetLogin.getErrorMessage().should('have.text', 'Invalid Login or Password.');\n//* Verify that username field is focus\ngetLogin.getUserNameField().should('to.be.focused');",
+              "err": {},
+              "uuid": "01b99180-4675-464f-a0ee-141debc6a4ac",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[TC006] Verify to login using valid credentials",
+              "fullTitle": "loginPageTesting [TC006] Verify to login using valid credentials",
+              "timedOut": null,
+              "duration": 2682,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.section('login using valid credentials');\ncy.step('1. Input correct credential');\ncy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));",
+              "err": {},
+              "uuid": "371ece41-7ab6-4ace-827b-4c5be5aee4ed",
+              "parentUUID": "b8ac6b0f-0b97-4f1d-a794-727f43186ff2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "905d3432-72b4-4238-9a96-7e98150f5c7c",
+            "87001eab-f259-41c0-9d18-7d1bad1ffa6a",
+            "d6eb3a71-0e09-4fde-b669-02721ce6f6e4",
+            "79c5f247-79df-4c84-a706-cb9d48e97637",
+            "01b99180-4675-464f-a0ee-141debc6a4ac",
+            "371ece41-7ab6-4ace-827b-4c5be5aee4ed"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8745,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

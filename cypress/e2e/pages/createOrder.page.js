@@ -1,0 +1,43 @@
+export default class createOrder {
+    getLocators = {
+        getOrderTab: () => cy.get('#ctl00_menu > :nth-child(3)'),
+
+        getProductInfo: () => cy.get('[colspan="2"] > :nth-child(3)'),
+        getAddressInfo: () => cy.get('[colspan="2"] > :nth-child(5)'),
+        getPaymentInfo: () => cy.get('[colspan="2"] > :nth-child(7)'),
+
+        getButtonCalculate: () => cy.get('input[type="submit"]'),
+        getButtonProcess: () => cy.get('#ctl00_MainContent_fmwOrder_InsertButton'),
+        getButtonReset: () => cy.get('input[type="reset"'),
+
+        getDropdownProduct: () => cy.get('#ctl00_MainContent_fmwOrder_ddlProduct'),
+        getFieldQuantity: () => cy.get('#ctl00_MainContent_fmwOrder_txtQuantity'),
+        getFieldPrice: () => cy.get('#ctl00_MainContent_fmwOrder_txtUnitPrice'),
+        getFieldDiscount: () => cy.get('#ctl00_MainContent_fmwOrder_txtDiscount'),
+        getFieldTotal: () => cy.get('#ctl00_MainContent_fmwOrder_txtTotal'),
+
+        getFieldName: () => cy.get('#ctl00_MainContent_fmwOrder_txtName'),
+        getFieldStreet: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox2'),
+        getFieldCity: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox3'),
+        getFieldState: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox4'),
+        getFieldZip: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox5'),
+
+        getOptionsCardType: () => cy.get('#ctl00_MainContent_fmwOrder_cardList_0, #ctl00_MainContent_fmwOrder_cardList_1, #ctl00_MainContent_fmwOrder_cardList_2'),
+        getFieldCardNumber: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox6'),
+        getFieldExpiry: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox1'),
+
+        processOrder({ name, street, city, state, zip, cardNumber, exp }) {
+            if (name) cy.get('#ctl00_MainContent_fmwOrder_txtName').type(name)
+            if (street) cy.get('#ctl00_MainContent_fmwOrder_TextBox2').type(street)
+            if (city) cy.get('#ctl00_MainContent_fmwOrder_TextBox3').type(city)
+            if (state) cy.get('#ctl00_MainContent_fmwOrder_TextBox4').type(state)
+            if (zip) cy.get('#ctl00_MainContent_fmwOrder_TextBox5').type(zip)
+            if (cardNumber) cy.get('#ctl00_MainContent_fmwOrder_TextBox6').clear().type(cardNumber)
+            if (exp) cy.get('#ctl00_MainContent_fmwOrder_TextBox1').clear().type(exp)
+
+            this.getButtonProcess().click()
+        }
+    }
+
+}
+
