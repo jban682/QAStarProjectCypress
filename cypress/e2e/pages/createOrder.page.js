@@ -1,5 +1,7 @@
 export default class createOrder {
     getLocators = {
+        getSideBarMenu: () => cy.get('#ctl00_menu > a'),
+
         getButtonCalculate: () => cy.get('input[type="submit"]'),
         getButtonProcess: () => cy.get('#ctl00_MainContent_fmwOrder_InsertButton'),
         getButtonReset: () => cy.get('input[type="reset"'),

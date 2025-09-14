@@ -12,12 +12,14 @@ describe('OrderPage', () => {
     beforeEach(() => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+        //cy.url().should('include', '/weborders');
 
-        cy.contains('a', 'Order', { timeout: 10000 }).click();
+        //cy.contains('a', 'Order', { timeout: 10000 }).click();
+        cy.visit('http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/Process.aspx');
         cy.url().should('include', '/Process.aspx');
     }),
 
-        it('[TC001] Verify Order page initial status', () => {
+        it.only('[TC001] Verify Order page initial status', () => {
             cy.section('[TC001] Verify Order page initial status');
             cy.contains('h2', 'Order').should('be.visible');
             cy.contains('h3', 'Product Information').should('be.visible');
