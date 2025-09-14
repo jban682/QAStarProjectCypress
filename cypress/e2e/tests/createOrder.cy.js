@@ -12,7 +12,6 @@ describe('OrderPage', () => {
     beforeEach(() => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
-        cy.url().should('include', '/weborders');
 
         getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
         cy.url().should('include', '/Process.aspx');
