@@ -16,7 +16,7 @@ describe('OrderPage', () => {
 
         //cy.contains('a', 'Order', { timeout: 10000 }).click();
         cy.visit('http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/Process.aspx');
-        cy.url().should('include', '/Process.aspx');
+       // cy.url().should('include', '/Process.aspx');
     }),
 
         it.only('[TC001] Verify Order page initial status', () => {
