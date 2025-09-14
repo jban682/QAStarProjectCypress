@@ -1,11 +1,5 @@
 export default class createOrder {
     getLocators = {
-        getOrderTab: () => cy.get('#ctl00_menu > :nth-child(3) > a'),
-
-        getProductInfo: () => cy.get('[colspan="2"] > :nth-child(3)'),
-        getAddressInfo: () => cy.get('[colspan="2"] > :nth-child(5)'),
-        getPaymentInfo: () => cy.get('[colspan="2"] > :nth-child(7)'),
-
         getButtonCalculate: () => cy.get('input[type="submit"]'),
         getButtonProcess: () => cy.get('#ctl00_MainContent_fmwOrder_InsertButton'),
         getButtonReset: () => cy.get('input[type="reset"'),

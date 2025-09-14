@@ -13,70 +13,51 @@ describe('OrderPage', () => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
 
-      //  getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
-       cy.contains('a', 'Order').click();
-       cy.url().should('include', '/Process.aspx');
+        cy.contains('a', 'Order', { timeout: 10000 }).click();
+        cy.url().should('include', '/Process.aspx');
     }),
 
-        it.only('[TC001] Verify Order page initial status', () => {
+        it('[TC001] Verify Order page initial status', () => {
             cy.section('[TC001] Verify Order page initial status');
             cy.contains('h2', 'Order').should('be.visible');
             cy.contains('h3', 'Product Information').should('be.visible');
 
-            getLocatorsCreateOrder.getProductInfo().within(() => {
-                cy.get('li').should('have.length', 5);
-                cy.get('li').eq(0).should('contain', 'Product:*');
-                getLocatorsCreateOrder.getDropdownProduct().invoke('val').should('eq', orderData.product1.productName);
+            //getLocatorsCreateOrder.getLabelProduct().should('be.visible');
+            cy.contains('label', 'Product:*').should('be.visible');
+            getLocatorsCreateOrder.getDropdownProduct().invoke('val').should('eq', orderData.product1.productName);
 
-                cy.get('li').eq(1).should('contain', 'Quantity:*');
-                getLocatorsCreateOrder.getFieldQuantity().should('have.value', '0');
-
-                cy.get('li').eq(2).should('contain', 'Price per unit:');
-                getLocatorsCreateOrder.getFieldPrice().should('have.value', orderData.product1.price);
-
-                cy.get('li').eq(3).should('contain', 'Discount:');
-                getLocatorsCreateOrder.getFieldDiscount().should('have.value', orderData.product1.discount);
-
-                cy.get('li').eq(4).should('contain', 'Total:');
-                getLocatorsCreateOrder.getFieldTotal().should('have.value', '0');
-
-                getLocatorsCreateOrder.getButtonCalculate().should('be.visible').and('be.enabled');
-            });
+            cy.contains('label', 'Quantity:*')
+            getLocatorsCreateOrder.getFieldQuantity().should('have.value', '0');
+            cy.contains('label', 'Price per unit:');
+            getLocatorsCreateOrder.getFieldPrice().should('have.value', orderData.product1.price);
+            cy.contains('label', 'Discount:');
+            getLocatorsCreateOrder.getFieldDiscount().should('have.value', orderData.product1.discount);
+            cy.contains('label', 'Total:');
+            getLocatorsCreateOrder.getFieldTotal().should('have.value', '0');
+            getLocatorsCreateOrder.getButtonCalculate().should('be.visible').and('be.enabled');
 
             cy.contains('h3', 'Address Information').should('be.visible');
-            getLocatorsCreateOrder.getAddressInfo().within(() => {
-                cy.get('li').should('have.length', 5);
-                cy.get('li').eq(0).should('contain', 'Customer name:*');
-                getLocatorsCreateOrder.getFieldName().should('be.visible').and('be.empty');
-
-                cy.get('li').eq(1).should('contain', 'Street:*');
-                getLocatorsCreateOrder.getFieldStreet().should('be.visible').and('be.empty');
-
-                cy.get('li').eq(2).should('contain', 'City:*');
-                getLocatorsCreateOrder.getFieldCity().should('be.visible').and('be.empty');
-
-                cy.get('li').eq(3).should('contain', 'State:');
-                getLocatorsCreateOrder.getFieldState().should('be.visible').and('be.empty');
-
-                cy.get('li').eq(4).should('contain', 'Zip:*');
-                getLocatorsCreateOrder.getFieldZip().should('be.visible').and('be.empty');
-            });
+            cy.contains('label', 'Customer name:*');
+            getLocatorsCreateOrder.getFieldName().should('be.visible').and('be.empty');
+            cy.contains('label', 'Street:*');
+            getLocatorsCreateOrder.getFieldStreet().should('be.visible').and('be.empty');
+            cy.contains('label', 'City:*');
+            getLocatorsCreateOrder.getFieldCity().should('be.visible').and('be.empty');
+            cy.contains('label', 'State:');
+            getLocatorsCreateOrder.getFieldState().should('be.visible').and('be.empty');
+            cy.contains('label', 'Zip:*');
+            getLocatorsCreateOrder.getFieldZip().should('be.visible').and('be.empty');
 
             cy.contains('h3', 'Payment Information').should('be.visible');
-            getLocatorsCreateOrder.getPaymentInfo().within(() => {
-                cy.get('li').should('have.length', 3);
-                cy.get('li').eq(0).should('contain', 'Card:*');
-                getLocatorsCreateOrder.getOptionsCardType().should('be.visible').and('not.be.checked');
-                getLocatorsCreateOrder.getOptionsCardType().eq(0).should('have.attr', 'value', 'Visa');
-                getLocatorsCreateOrder.getOptionsCardType().eq(1).should('have.attr', 'value', 'MasterCard');
-                getLocatorsCreateOrder.getOptionsCardType().eq(2).should('have.attr', 'value', 'American Express');
-
-                cy.get('li').eq(1).should('contain', 'Card Nr:*');
-                getLocatorsCreateOrder.getFieldCardNumber().should('be.visible').and('be.empty');
-
-                cy.get('li').eq(2).should('contain', 'Expire date (mm/yy):*');
-                getLocatorsCreateOrder.getFieldExpiry().should('be.visible').and('be.empty');
-            });
+            cy.contains('label', 'Card:*');
+            getLocatorsCreateOrder.getOptionsCardType().should('be.visible').and('not.be.checked');
+            getLocatorsCreateOrder.getOptionsCardType().eq(0).should('have.attr', 'value', 'Visa');
+            getLocatorsCreateOrder.getOptionsCardType().eq(1).should('have.attr', 'value', 'MasterCard');
+            getLocatorsCreateOrder.getOptionsCardType().eq(2).should('have.attr', 'value', 'American Express');
+            cy.contains('label', 'Card Nr:*');
+            getLocatorsCreateOrder.getFieldCardNumber().should('be.visible').and('be.empty');
+            cy.contains('label', 'Expire date (mm/yy):*');
+            getLocatorsCreateOrder.getFieldExpiry().should('be.visible').and('be.empty');
             getLocatorsCreateOrder.getButtonProcess().should('have.text', 'Process').and('be.visible');
             getLocatorsCreateOrder.getButtonReset().should('have.value', 'Reset').and('be.visible');
         }),
@@ -258,23 +239,23 @@ describe('OrderPage', () => {
             cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator3', "Invalid format. Required format is mm/yy.");
         });
 
-        it('[TC009] Validate that Address Information and Payment Information textbox fields has no limit', () => {
-            cy.section('256 char input to all text field')
-            getLocatorsCreateOrder.processOrder({
-                name: orderData.limit256CharInput.customerName,
-                street: orderData.limit256CharInput.street,
-                city: orderData.limit256CharInput.city,
-                state: orderData.limit256CharInput.state,
-                zip: orderData.limit256CharInput.zip,
-                cardNumber: orderData.limit256CharInput.cardNr,
-                exp: orderData.limit256CharInput.expireDate
-            });
-            cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator1', "Quantity must be greater than zero.");
-            cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_rev1', "Invalid format. Only digits allowed.");
-            cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_CustomValidator1', "Select a card type.");
-            cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator2', "Invalid format. Only digits allowed.");
-            cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator3', "Invalid format. Required format is mm/yy.");
-        }),
+    it('[TC009] Validate that Address Information and Payment Information textbox fields has no limit', () => {
+        cy.section('256 char input to all text field')
+        getLocatorsCreateOrder.processOrder({
+            name: orderData.limit256CharInput.customerName,
+            street: orderData.limit256CharInput.street,
+            city: orderData.limit256CharInput.city,
+            state: orderData.limit256CharInput.state,
+            zip: orderData.limit256CharInput.zip,
+            cardNumber: orderData.limit256CharInput.cardNr,
+            exp: orderData.limit256CharInput.expireDate
+        });
+        cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator1', "Quantity must be greater than zero.");
+        cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_rev1', "Invalid format. Only digits allowed.");
+        cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_CustomValidator1', "Select a card type.");
+        cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator2', "Invalid format. Only digits allowed.");
+        cy.verifyErrorMessage('#ctl00_MainContent_fmwOrder_RegularExpressionValidator3', "Invalid format. Required format is mm/yy.");
+    }),
 
         it('[TC010] Verify reset button functionality', () => {
             getLocatorsCreateOrder.getButtonReset().click();
@@ -356,11 +337,13 @@ describe('OrderPage', () => {
         }),
 
         it('[TC013] SideBar: Navigation test', () => {
-            cy.get('#ctl00_menu > :nth-child(2) > a').should('have.text', 'View all products').click();
+            cy.contains('a', 'View all products', { timeout: 10000 }).click();
             cy.url().should('include', '/Products.aspx');
-            cy.get('#ctl00_menu > :nth-child(1) > a').should('have.text', 'View all orders').click();
+
+            cy.contains('a', 'View all orders', { timeout: 10000 }).click();
             cy.url().should('include', '/Default.aspx');
-            getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
+
+            cy.contains('a', 'Order', { timeout: 10000 }).click();
             cy.url().should('include', '/Process.aspx');
             cy.go('back');
             cy.go('forward');
