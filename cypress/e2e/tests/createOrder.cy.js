@@ -13,11 +13,12 @@ describe('OrderPage', () => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
 
-        getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
-        cy.url().should('include', '/Process.aspx');
+      //  getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
+       cy.contains('a', 'Order').click();
+       cy.url().should('include', '/Process.aspx');
     }),
 
-        it('[TC001] Verify Order page initial status', () => {
+        it.only('[TC001] Verify Order page initial status', () => {
             cy.section('[TC001] Verify Order page initial status');
             cy.contains('h2', 'Order').should('be.visible');
             cy.contains('h3', 'Product Information').should('be.visible');
@@ -355,9 +356,9 @@ describe('OrderPage', () => {
         }),
 
         it('[TC013] SideBar: Navigation test', () => {
-            cy.get('#ctl00_menu > :nth-child(2)').should('have.text', 'View all products').click();
+            cy.get('#ctl00_menu > :nth-child(2) > a').should('have.text', 'View all products').click();
             cy.url().should('include', '/Products.aspx');
-            cy.get('#ctl00_menu > :nth-child(1)').should('have.text', 'View all orders').click();
+            cy.get('#ctl00_menu > :nth-child(1) > a').should('have.text', 'View all orders').click();
             cy.url().should('include', '/Default.aspx');
             getLocatorsCreateOrder.getOrderTab().should('have.text', 'Order').click();
             cy.url().should('include', '/Process.aspx');

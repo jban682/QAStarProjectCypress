@@ -1,6 +1,6 @@
 export default class createOrder {
     getLocators = {
-        getOrderTab: () => cy.get('#ctl00_menu > :nth-child(3)'),
+        getOrderTab: () => cy.get('#ctl00_menu > :nth-child(3) > a'),
 
         getProductInfo: () => cy.get('[colspan="2"] > :nth-child(3)'),
         getAddressInfo: () => cy.get('[colspan="2"] > :nth-child(5)'),
