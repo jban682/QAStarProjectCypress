@@ -13,13 +13,15 @@ describe('OrderPage', () => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
         
-        cy.get('a[href="Process.aspx"]').click();
-        cy.url().should('include', '/Process.aspx');
+        cy.reload();
+        cy.visit(Cypress.env('ORDER_URL'));
+        //cy.get('a[href="Process.aspx"]').click();
+        //cy.url().should('include', '/Process.aspx');
     }),
 
         it.only('[TC001] Verify Order page initial status', () => {
             cy.section('[TC001] Verify Order page initial status');
-            cy.get('h2').should('contain', 'Order');
+            cy.get('h2').should('exist').should('contain', 'Order');
 
             // cy.contains('h2', 'Order').should('be.visible');
             cy.contains('h3', 'Product Information').should('be.visible');

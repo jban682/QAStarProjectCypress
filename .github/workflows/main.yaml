@@ -12,6 +12,7 @@ jobs:
       BASE_URL: ${{ vars.BASE_URL }}
       USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ vars.PASSWORD }}
+      ORDER_URL: ${{ vars.ORDER_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
