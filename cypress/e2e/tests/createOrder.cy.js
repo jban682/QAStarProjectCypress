@@ -13,10 +13,10 @@ describe('OrderPage', () => {
         cy.visit(Cypress.env('BASE_URL'));
         cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
         
-        cy.reload();
-        cy.visit(Cypress.env('ORDER_URL'));
-        //cy.get('a[href="Process.aspx"]').click();
-        //cy.url().should('include', '/Process.aspx');
+        
+        //cy.visit(Cypress.env('ORDER_URL'));
+        cy.get('a[href="Process.aspx"]').click();
+        cy.url().should('include', '/Process.aspx');
     }),
 
         it('[TC001] Verify Order page initial status', () => {
