@@ -19,7 +19,7 @@ describe('OrderPage', () => {
         //cy.url().should('include', '/Process.aspx');
     }),
 
-        it.only('[TC001] Verify Order page initial status', () => {
+        it('[TC001] Verify Order page initial status', () => {
             cy.section('[TC001] Verify Order page initial status');
             cy.get('h2').should('exist').should('contain', 'Order');
 
