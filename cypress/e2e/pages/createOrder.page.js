@@ -21,15 +21,15 @@ export default class createOrder {
         getFieldExpiry: () => cy.get('#ctl00_MainContent_fmwOrder_TextBox1'),
 
         processOrder({ name, street, city, state, zip, cardNumber, exp }) {
-            if (name) cy.get('#ctl00_MainContent_fmwOrder_txtName').type(name)
-            if (street) cy.get('#ctl00_MainContent_fmwOrder_TextBox2').type(street)
-            if (city) cy.get('#ctl00_MainContent_fmwOrder_TextBox3').type(city)
-            if (state) cy.get('#ctl00_MainContent_fmwOrder_TextBox4').type(state)
-            if (zip) cy.get('#ctl00_MainContent_fmwOrder_TextBox5').type(zip)
-            if (cardNumber) cy.get('#ctl00_MainContent_fmwOrder_TextBox6').clear().type(cardNumber)
-            if (exp) cy.get('#ctl00_MainContent_fmwOrder_TextBox1').clear().type(exp)
+            if (name) this.getFieldName().type(name);
+            if (street) this.getFieldStreet().type(street);
+            if (city) this.getFieldCity().type(city);
+            if (state) this.getFieldState().type(state);
+            if (zip) this.getFieldZip().type(zip);
+            if (cardNumber) this.getFieldCardNumber().clear().type(cardNumber);
+            if (exp) this.getFieldExpiry().clear().type(exp);
 
-            this.getButtonProcess().click()
+            this.getButtonProcess().click();
         }
     }
 

@@ -28,7 +28,6 @@ import orderPageObject from "../e2e/pages/login.page";
 
 Cypress.Commands.add('login', (username, password) => {
   const getLogin = new orderPageObject();
-  
   getLogin.login(username, password);
 });
 

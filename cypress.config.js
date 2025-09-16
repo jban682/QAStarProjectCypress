@@ -3,14 +3,15 @@ const { defineConfig } = require("cypress");
 require('dotenv').config()
 
 module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
-  
+    
   env: {
     BASE_URL: process.env.BASE_URL,
     USERNAME: process.env.USER,
-    PASSWORD: process.env.PASSWORD,
+    PASSWORD: process.env.PASS,
     ORDER_URL: process.env.ORDER_URL,
   },
+
+  reporter: 'cypress-mochawesome-reporter',
 
   e2e: {
     setupNodeEvents(on, config) {
@@ -18,5 +19,6 @@ module.exports = defineConfig({
       require('@cypress/grep/src/plugin')(config);
       return config;
     },
+    watchForFileChanges: false,
   },
 });

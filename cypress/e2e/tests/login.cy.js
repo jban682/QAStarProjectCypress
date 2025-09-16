@@ -59,4 +59,5 @@ describe('loginPageTesting', () => {
             cy.section('login using valid credentials');
             cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
         })
+
 })

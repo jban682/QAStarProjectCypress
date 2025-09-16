@@ -10,9 +10,9 @@ export default class orderPageObject {
     };
 
     login(username, password) {
-        this.getLoginPageLocators.getFieldUserName().type(username);
-        this.getLoginPageLocators.getFieldPassword().type(password);
-        this.getLoginPageLocators.getButtonLogin().click();
+        this.getLoginPageLocators.getFieldUserName().type(username),
+        this.getLoginPageLocators.getFieldPassword().type(password),
+        this.getLoginPageLocators.getButtonLogin().click()
     }
 
 }

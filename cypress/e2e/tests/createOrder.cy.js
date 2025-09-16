@@ -11,8 +11,8 @@ describe('OrderPage', () => {
 
     beforeEach(() => {
         cy.visit(Cypress.env('BASE_URL'));
-        cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
-        
+        //cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+        cy.login('Tester', 'test');
         
         //cy.visit(Cypress.env('ORDER_URL'));
         cy.get('a[href="Process.aspx"]').click();
