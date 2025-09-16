@@ -57,7 +57,7 @@ describe('loginPageTesting', () => {
 
         it('[TC006] Verify to login using valid credentials', { tags: '@smoke' }, () => {
             cy.section('login using valid credentials');
-            cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+            cy.login(Cypress.env('APP_USERNAME'), Cypress.env('PASSWORD'));
         })
 
 })

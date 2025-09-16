@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       BASE_URL: ${{ vars.BASE_URL }}
-      USERNAME: ${{ vars.USERNAME }}
+      APP_USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ vars.PASSWORD }}
       ORDER_URL: ${{ vars.ORDER_URL }}
     steps:

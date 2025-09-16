@@ -3,10 +3,9 @@ const { defineConfig } = require("cypress");
 require('dotenv').config()
 
 module.exports = defineConfig({
-    
   env: {
     BASE_URL: process.env.BASE_URL,
-    USERNAME: process.env.USER,
+    APP_USERNAME: process.env.USER,
     PASSWORD: process.env.PASS,
     ORDER_URL: process.env.ORDER_URL,
   },
