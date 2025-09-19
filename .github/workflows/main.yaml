@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BASE_URL: ${{ vars.BASE_URL }}
-      APP_USERNAME: ${{ vars.APP_USERNAME }}
-      APP_PASSWORD: ${{ vars.APP_PASSWORD }}
+      APP_USERNAME: 'Tester'
+      APP_PASSWORD: 'test'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
