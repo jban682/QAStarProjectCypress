@@ -27,8 +27,14 @@ import orderPageObject from "../e2e/pages/login.page";
 
 
 Cypress.Commands.add('login', (username, password) => {
-const getLogin = new orderPageObject().getLoginPageLocators
-  getLogin.getUserNameField().type(username);
-  getLogin.getPasswordField().type(password);
-  getLogin.getLoginButton().click();
-})
+  const getLogin = new orderPageObject();
+  getLogin.login(username, password);
+});
+
+Cypress.Commands.add('verifyErrorMessage', (id, expectedText) => {
+  cy.get(`${id}`)
+    .invoke('text')
+    .then((text) => {
+      expect(text.trim()).to.equal(expectedText);
+    });
+});
