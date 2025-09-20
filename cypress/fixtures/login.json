@@ -1,18 +1,20 @@
 {
-        "TC002": {
-            "username": "jean test",
-            "password": "jeantesting"
-        },
-        "TC003": {
-            "username": "username",
-            "password": "password"
-        },
-        "TC004": {
-            "username": "username",
-            "password": "test"
-        },
-        "TC005": {
-            "username": "tester",
-            "password": "testing"
-        }
+    "TC002": {
+        "username": "jean test",
+        "password": "jeantesting"
+    },
+    "TC003": {
+        "username": "username",
+        "password": "password"
+    },
+    "TC004": {
+        "username": "username",
+        "password": "test"
+    },
+    "TC005": {
+        "username": "tester",
+        "password": "testing"
+    },
+    "username": "tester",
+    "password": "test"
 }

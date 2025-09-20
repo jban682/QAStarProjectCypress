@@ -55,9 +55,12 @@ describe('loginPageTesting', () => {
             getLogin.getFieldUserName().should('to.be.focused');
         }),
 
-        it('[TC006] Verify to login using valid credentials', { tags: '@smoke' }, () => {
+        it.only('[TC006] Verify to login using valid credentials', { tags: '@smoke' }, () => {
             cy.section('login using valid credentials');
-            cy.login(Cypress.env('APP_USERNAME'), Cypress.env('PASSWORD'));
+            cy.log(Cypress.env('APP_USERNAME'));
+            cy.log(Cypress.env('APP_PASSWORD'));
+            cy.login(Cypress.env('APP_USERNAME'), Cypress.env('APP_PASSWORD'));
+            //cy.login(loginData.username, loginData.password);
         })
 
 })

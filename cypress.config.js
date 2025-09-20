@@ -5,8 +5,8 @@ require('dotenv').config()
 module.exports = defineConfig({
   env: {
     BASE_URL: process.env.BASE_URL,
-    APP_USERNAME: process.env.USER,
-    PASSWORD: process.env.PASS,
+    APP_USERNAME: process.env.APP_USERNAME,
+    APP_PASSWORD: process.env.APP_PASSWORD,
     ORDER_URL: process.env.ORDER_URL,
   },
 

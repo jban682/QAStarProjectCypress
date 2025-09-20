@@ -1,4 +1,4 @@
-name: Over All Testing
+name: Over All Test
 on:
   push:
     branches: [main]
@@ -8,11 +8,10 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    env: 
+    env:
       BASE_URL: ${{ vars.BASE_URL }}
-      APP_USERNAME: ${{ vars.USERNAME }}
-      PASSWORD: ${{ vars.PASSWORD }}
-      ORDER_URL: ${{ vars.ORDER_URL }}
+      APP_USERNAME: ${{ vars.APP_USERNAME }}
+      APP_PASSWORD: ${{ vars.APP_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +21,7 @@ jobs:
         with:
           browser: chrome
           headed: false
-          command: npm t
+          command: npm run test:regression
 
       - name: Publish Test Reports
         if: always()
